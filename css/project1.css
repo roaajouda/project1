@@ -1,0 +1,440 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Work Sans', sans-serif;
+}
+:root {
+    --main-color:#10ced7;
+    --second-color: #2c4755;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+@media (max-width: 768px) {
+    .special-heading {
+        font-size: 60px;
+    }
+    .special-heading + p {
+        margin-top: -20px;
+    }
+    .services .services-content .serv {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media (max-width: 1199px) {
+    .services .services-content .col .image {
+        display: none;
+    }
+}
+/* global thigs */
+/* start component هاد اشي رح نستخدمه اكتر من مرة */
+.special-heading {
+    color: #ebeceb;
+    font-size: 100px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -3px;
+    margin: 0px;
+}
+.special-heading + p {
+    margin: -40px 0 0;
+    color: #797979;
+    text-align: center;
+    font-size: 20px;
+}
+
+ /* hedarالقسم الخاص بال   */
+.hedar {
+    padding: 20px;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* عملنا زي هيك علشان يكون العناصر بالنص وفي فراغ بينهم  */
+.hedar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.hedar .logo {
+    width: 70px;
+   margin-left: 40px;
+}
+.hedar .links {
+    position: relative;
+}
+/*الحين تخيلي انوا هاد الاب وانتي عايزة تعمل مساحة معينة للايقونات ف رح نحدد العرض ورح نحط انوا يكون فلكس وانوا العناصر تكون 
+ راب علشان ما يكونوا جنب بعض  */
+
+.hedar .links .icon {
+   width: 30px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-end;
+}
+.hedar .links .icon span {
+    
+    background-color: black;
+    margin-bottom: 5px;
+    height: 3px;
+    
+
+}
+.hedar .links .icon span:first-child {
+    width: 100%;
+}
+.hedar .links .icon span:nth-child(2) {
+    width: 60%;
+    transition: .3s;
+}
+.hedar .links .icon span:last-child {
+    width: 100%;
+}
+.hedar .links:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+
+/* برضو هاد اتخيلي لانوا هاد مش الكلام وانما الاشي المحيط بالكلام و حطينا انو كل هاد الاشي يختفي علشان لما احط الموشر يظهر*/
+.hedar .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f6f6f6;
+    width: 200px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+}
+/* حطينا البوزشن ابسوليوت علشان اقدر اتحكم فيه بالنسبة للاب تبعوا والتوب تبعوا جبتوا من الصفحة الي بشتغل عليها  */
+.hedar .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    top: -19.2px;
+    right: 5px;
+}
+.hedar .links ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: .3s;
+}
+/* هان اول ما يجي الموشر على الينكس رح تظهر القائمة و منطقة الينكس فقط الايكونز*/
+.hedar .links:hover ul  {
+    display: block;
+}
+
+.hedar .links ul li a:hover {
+    padding-left: 25px;
+}
+.hedar .links ul li:not(:last-child) a { 
+    border-bottom: 1px solid #ddd;
+} 
+ /* hedarهيك خلصنا القسم الخاص بال  */
+
+/* رح نبدأ نعمل الجزء التاني */
+.landing {
+    background-image: url(../images/85838144-black-and-white-mountain-in-switzerland.webp);
+    background-size: cover;
+    height: calc(100vh - 68px);
+    position: relative;
+}
+/* حطينا انو العرض للكلام هيك علشان لو صار ما صار يضل محافظ على شكل الكلام */
+.landing .intro-text {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+}
+.landing .intro-text h1 {
+    margin: 0;
+    font-weight: bolder;
+    color: var(--main-color);
+    font-size: 55px;
+}
+.landing .intro-text p {
+   line-height: 1.8;
+    font-size: 22px;
+
+}
+/* section three */
+.features {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+/* بما انو العناصر بلوك ف احنا قسمنا المساحة المخصصة الهم ب 3 اعممدة لحال ف هو فهم لحالوا انو لكل عنصر عمود وهادي الكود بخلي 
+انوا حتى لو صغرنا يرتب حالو لحالو */
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+.features .feat {
+    padding: 20px;
+    text-align: center;
+}
+.features .feat i {
+    font-size: 30px;
+    color: var(--main-color);
+    
+}
+.features .feat h3 {
+    font-weight: 800;
+    margin: 30px 0;
+}
+.features .feat p {
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+/* start srevices */
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
+}
+
+.services .services-content .serv {
+    display: flex;
+    margin-bottom: 40px;
+}
+/* flex-basis هي خاصية تستخدم زي العرض بالضبط بس تستخدم مع فليكس بحيث لو غيرنا للعمود يكون يتفير عادي معنا مش يضل عرض */
+.services .services-content .serv i {
+    color: var(--main-color);
+    flex-basis: 60px;
+    font-size: 25px;
+}
+.services .services-content .serv .text {
+    flex: 1;
+}
+.services .services-content .serv .text h3 {
+    margin: 0 0 20px;
+    
+}
+.services .services-content .serv .text p {
+    color: #777;
+    line-height: 1.6;
+    font-weight: 300;
+}
+.services .services-content .col .image img {
+    width: 220px
+ }
+.services .services-content .col .image {
+    position: relative;
+    width: 260px;
+}
+
+.services .services-content .col .image::before {
+    content: "";
+    background-color: var(--second-color);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 80px;
+    height: calc(100% + 80px);
+    z-index: -1;
+}
+/* end services */
+/* start portfolio */
+.portfolio {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+.portfolio .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 80px;
+}
+img {
+    max-width: 100% ;
+   
+}
+.portfolio .portfolio-content .card {
+    background-color: white;
+}
+.portfolio .portfolio-content .card .info {
+    padding: 20px;
+}
+.portfolio .portfolio-content .card .info h3 {
+    margin: 0;
+}
+.portfolio .portfolio-content .card .info p {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+/* end portfolio */
+/* start about */
+.about {
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+.about-content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width: 991px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about .about-content .image::before,
+    .about .about-content .image::after {
+        display: none;
+    }
+    .about .about-content .image {
+        margin: 0 auto 80px;
+    }
+}
+.about .about-content .image {
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+.about .about-content .image img {
+    width: 250px;
+    height: 375px;
+}
+.about .about-content .image::before {
+    content: " ";
+    width: 100px;
+    height: calc(100% + 80px);
+    background-color: #ebeceb;
+    position: absolute;
+    left: -20px;
+    top: -40px;
+    z-index: -1;
+
+}
+.about .about-content .image::after {
+    content: " ";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: var(--main-color) solid 80px;
+    border-bottom: var(--main-color) solid 80px;
+    top: -40px;
+    right: -150px;
+    z-index: -1;
+}
+.about .about-content .text {
+    flex-basis: calc(100% - 500px);
+    /* ممكن هادي طريقة تانية اني اوزع العناصر في الفلكس */
+    /* flex: 1;
+    padding-left: 200px; */
+}
+.about .about-content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+}
+.about .about-content .text hr {
+    width: 50%;
+    border-color: var(--main-color);
+    display: inline-block;
+
+}
+.about .about-content .text p:last-of-type { 
+    line-height: 2;
+    color: #777;
+}
+/* start contact */
+.contact {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+.contact .info {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+.contact .info .label {
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--second-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact .info .link {
+    display: block;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--main-color);
+    text-decoration: none;
+}
+@media (max-width: 767px) {
+    .contact .info .link,
+    .contact .info .label {
+        font-size: 25px;
+    }
+}
+.contact .info .social {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+.contact .info .social i {
+    color: var(--main-color);
+    margin-left: 10px;
+}
+/* start footer */
+.footer {
+    background-color: var(--second-color);
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    padding: 30px 10px;
+}
+.footer span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+
+
